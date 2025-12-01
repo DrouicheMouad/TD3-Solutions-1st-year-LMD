@@ -3,6 +3,10 @@
 #include <stdbool.h>
 
 void NisPrime(int N) {
+	if (N==2 || N==3) {
+		printf("%d is prime \n", N);
+	}
+	else {
 		int End = N / 2;
 		bool NisPrime = 0;
 		for (int i = 2; i <= End; i++) {
@@ -17,7 +21,7 @@ void NisPrime(int N) {
 		if (NisPrime == 1) {
 			printf("%d is prime \n", N);
 		}
-
+	}
 }
 int Max(int x, int y) {
 	if (x <= y)
