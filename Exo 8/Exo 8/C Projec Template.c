@@ -15,11 +15,8 @@ int main() {
 			q++;
 		}
 		r = a - b*q;
-		printf("%d / %d = %d.%d + %d", a, b, q, b, r);
 		printf("\nQuotient = %d", q);
 		printf("\nRest = %d", r);
-
-
 	}
 
 
