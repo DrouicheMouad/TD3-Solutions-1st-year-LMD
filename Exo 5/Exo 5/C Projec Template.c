@@ -2,26 +2,17 @@
 #include <math.h>
 #include <stdbool.h>
 
-void NisPrime(int N) {
-	if (N==2 || N==3) {
-		printf("%d is prime \n", N);
-	}
+bool NisPrime(int N) {
+	if (N < 2)
+		return 0;
 	else {
 		int End = N / 2;
-		bool NisPrime = 0;
-		for (int i = 2; i <= End; i++) {
+		for (int i = 2; i <= End; i++)
 			if (N % i == 0) {
-				NisPrime = 0;
-				break;
-			}
-			else {
-				NisPrime = 1;
+				return 0;
 			}
 		}
-		if (NisPrime == 1) {
-			printf("%d is prime \n", N);
-		}
-	}
+	return 1;
 }
 int Max(int x, int y) {
 	if (x <= y)
@@ -46,7 +37,8 @@ int main() {
 
 	printf("Finding prime numbers in this interval [%d , %d]\n", min, max);
 	for (int i = min; i <= max; i++) {
-		NisPrime(i);
+		if(NisPrime(i))
+			printf("%d\n",i);
 	}
 
 

@@ -1,24 +1,25 @@
 #include <stdio.h>
 
-int main() {
-	int a, b;
-	printf("Enter a "); scanf("%d", &a);
-	printf("Enter b "); scanf("%d", &b);
+void Division(int a, int b, int* q , int* r) {
 	if (a < b) {
-		printf("\nQuotient = 0");
-		printf("\nRest = %d", a);
+		*q = 0; *r = a;
 	}
 	else {
-		int q = 1;
-		int r = 0;
-		while (a - b*q >= b) {
-			q++;
+		*q = 1;
+		*r = 0;
+		while (a - b * *q >= b) {
+			*q= *q+1;
 		}
-		r = a - b*q;
-		printf("\nQuotient = %d", q);
-		printf("\nRest = %d", r);
+		*r = a - b * *q;
 	}
-
+}
+int main() {
+	int a, b, q, r;
+	printf("Enter a "); scanf("%d", &a);
+	printf("Enter b "); scanf("%d", &b);
+	Division(a, b, &q, &r);
+	printf("Quotient = %d\n", q);
+	printf("Rest = %d\n", r);
 
 
 	return 0;
